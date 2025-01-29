@@ -70,5 +70,5 @@ education-management/
 ## 5. Images
 ![Index page](images/index.png)
 ![DataTable](images/table.png)
-![Database](images/db1.png)
+![Database1](images/db1.png)
 ![Database](images/db2.png)
