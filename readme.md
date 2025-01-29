@@ -66,3 +66,9 @@ education-management/
 │── README.md
 
 ```
+
+## 5. Images
+![Index page](images/index.png)
+![DataTable](images/table.png)
+![Database](images/db1.png)
+![Database](images/db2.png)
