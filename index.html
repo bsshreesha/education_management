@@ -1,26 +1,21 @@
-
-<!--  -->
 <!DOCTYPE html>
 <html>
-<!DOCTYPE html>
-<html>
-	<head>
-		<title>Education Details Portal</title>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta name="google" value="notranslate">
-		<link rel="shortcut icon" href="favicon.png" >
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="google" value="notranslate">
-		<script src="Assets/js/jquery.min.js" type="text/javascript"></script>
-		<link href="Assets/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-		<script src="Assets/js/bootstrap.min.js"></script>
-		<script src="Assets/js/jquery-1.11.1.min.js"></script>
-		<link href="Assets/css/style.css" rel="stylesheet">
+    <head>
+        <title>Education Details Management System</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="google" value="notranslate">
+        <link rel="shortcut icon" href="favicon.jpeg">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="google" value="notranslate">
+        <script src="Assets/js/jquery.min.js" type="text/javascript"></script>
+        <link href="Assets/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="Assets/js/bootstrap.min.js"></script>
+        <link href="Assets/css/newStyle.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
         <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.2/css/buttons.dataTables.min.css">
-		<script src="Assets/js/style.js"></script>
-		<style>
+        <script src="Assets/js/style.js"></script>
+        <style>
 			/* Dynamically adjust based on the selected flag */
 			.cc-select[data-selected="in"] { background-image: url('https://flagcdn.com/w20/in.png'); }
 			.cc-select[data-selected="us"] { background-image: url('https://flagcdn.com/w20/us.png'); }
@@ -73,7 +68,7 @@
 			.cc-select {
 				background-size: 20px 20px;
 				background-repeat: no-repeat;
-				background-position: 2px center;
+				background-position: 5px center;
 				padding-left: 30px;
 			}
 
@@ -84,1101 +79,1188 @@
 
             .text-danger {
                 color: red;
-                border: red;
+                border-color: red;
             }
 		</style>
-		<!-- <script src="js/jquery-1.11.0.js" type="text/javascript"></script> -->
-		
-		<!------ Include the above in your HEAD tag ---------->
-	</head>
-	<body>
-		<div class="container">
-			<div class="row">
-				<img src="new_header1.png" class="img-responsive">
-				<div class="col-md-12" style="background-color: #e4e4e461;">
-					<div class="row" style="background-color:#3e3636;margin-bottom:10px;">
-						<h3 style="text-align:center;color:#eee;margin-top:10px;margin-bottom:10px;">EDUCATION DETAIL PORTAL </h3>
-					</div>
-<div class="panel-body">
-	<form id="educationForm" class="row g-3" style="background-color: #e4e4e461; padding: 20px;" autocomplete="off">
-		<!-- Student Name and Prefix -->
-		<div class="col-md-4" style="display: flex;">
-			<div style="flex-grow: 0; width: 83px; position: relative;">
-				<label for="studentPrefix"><b>Prefix</b> <span style="color: red;">*</span></label><br>
-				<select id="studentPrefix" class="form-control prefix-select">
-					<option value="" disabled selected>Prefix</option>
-					<option value="Dr.">Dr.</option>
-					<option value="Prof.">Prof.</option>
-					<option value="Mr.">Mr.</option>
-					<option value="Mrs.">Mrs.</option>
-					<option value="Miss.">Miss.</option>
-				</select>
-				<div id="studentPrefixError" class="text-danger" style="font-size: 0.875em; display: none;">Select a prefix.</div>
-			</div>
-			<div style="flex-grow: 2; position: relative; margin-left: 0px; width: 200px;">
-				<label for="StuName"><b>Student Name</b> <span style="color: red;">*</span></label><br>
-				<input type="text" class="form-control" id="StuName" placeholder="Student Name" style="text-transform: uppercase;">
-				<div id="studentNameError" class="text-danger" style="font-size: 0.875em; display: none;">Please enter a student name.</div><br>
-			</div>
-		</div>
-		
-		<!-- Father's Name and Prefix -->
-		<div class="col-md-4" style="display: flex;">
-			<div style="flex-grow: 0; width: 83px; position: relative;">
-				<label for="fatherPrefix"><b>Prefix</b> <span style="color: red;">*</span></label>
-				<select id="fatherPrefix" class="form-control prefix-select">
-					<option value="" disabled selected>Prefix</option>
-					<option value="Dr.">Dr.</option>
-					<option value="Prof.">Prof.</option>
-					<option value="Mr.">Mr.</option>
-					<option value="Mrs.">Mrs.</option>
-					<option value="Miss.">Miss.</option>
-				</select>
-				<div id="fatherPrefixError" class="text-danger" style="font-size: 0.875em; display: none;">Select a prefix.</div>
-			</div>
-			<div style="flex-grow: 2; position: relative; margin-left: 0px; width: 200px;">
-				<label for="FatName"><b>Father's Name</b> <span style="color: red;">*</span></label><br>
-				<input type="text" class="form-control" id="FatName" placeholder="Father's Name" style="text-transform: uppercase;">
-				<div id="fatherNameError" class="text-danger" style="font-size: 0.875em; display: none;">Please enter father's name.</div><br>
-			</div>
-		</div>
-	
-		<!-- Mother's Name and Prefix -->
-		<div class="col-md-4" style="display: flex;">
-			<div style="flex-grow: 0; width: 83px; position: relative;">
-				<label for="motherPrefix"><b>Prefix</b> <span style="color: red;">*</span></label><br>
-				<select id="motherPrefix" class="form-control prefix-select">
-					<option value="" disabled selected>Prefix</option>
-					<option value="Dr.">Dr.</option>
-					<option value="Prof.">Prof.</option>
-					<option value="Mr.">Mr.</option>
-					<option value="Mrs.">Mrs.</option>
-					<option value="Miss.">Miss.</option>
-				</select>
-				<div id="motherPrefixError" class="text-danger" style="font-size: 0.875em; display: none;">Select a prefix.</div>
-			</div>
-			<div style="flex-grow: 2; position: relative; margin-left: 0px; width: 200px;">
-				<label for="MothName"><b>Mother's Name</b> <span style="color: red;">*</span></label><br>
-				<input type="text" class="form-control" id="MothName" placeholder="Mother's Name" style="text-transform: uppercase;">
-				<div id="motherNameError" class="text-danger" style="font-size: 0.875em; display: none;">Please enter mother's name.</div><br>
-			</div>
-		</div>
+    </head>
+    <body style="background-color: #ffffff3b;">
+        <div class="container">
+            <div class="row" style="margin-bottom:15px">
+                <div class="col-md-12" style="background-color: #ffffff;">
+                    <div class="row phide" style="background-color:#3e3636;margin-bottom:10px;">
+                        <h3 style="text-align:center;color:#eee;margin-top:10px;margin-bottom:10px;">Education Details Management System</h3>
+                    </div>
+                   <div class="row" style="padding-top: 15px;">
+                    <div class="panel panel-success" style="margin-bottom: 0px;">
+                        <div class="panel-heading" style="text-align:center">
+                            <div class="row" style="display: flex; justify-content: space-between; align-items: center;">
+                                <div class="col-md-4" style="text-align: left;"> ADD EDUCATION DETAILS
+                                </div>
+                                <div class="col-md-8" style="text-align:right">
+                                    <form action="logout.php" method="POST" id="logout-form">
+                                        <button type="button" class="btn btn-danger" onclick="confirmLogout()">LOGOUT!</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                            
+                            <script>
+                                function confirmLogout() {
+                                    const confirmAction = confirm("Are you sure you want to log out?");
+                                    if (confirmAction) {
+                                        document.getElementById('logout-form').submit();
+                                    }
+                                }
+                            </script>
+                            <div class="panel-body" style="padding-bottom:0px;">
+                                <div class="alert alert-warning alert-dismissible" role="alert">
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <strong>Note :</strong> Fields marked  <strong style="color: red;">*</strong>  are MANDATORY
+                                </div>
+                                <form id="educationForm" class="row g-3" autocomplete="off">
+                                    <!-- Student Name and Prefix -->
+                                    <div class="col-md-4" style="display: flex;">
+                                        <div style="flex-grow: 0; width: 83px; position: relative;">
+                                            <label for="studentPrefix"><b>Prefix</b> <span style="color: red;">*</span></label><br>
+                                            <select id="studentPrefix" class="form-control prefix-select">
+                                                <option value="" disabled selected>Prefix</option>
+                                                <option value="Dr.">Dr.</option>
+                                                <option value="Prof.">Prof.</option>
+                                                <option value="Mr.">Mr.</option>
+                                                <option value="Mrs.">Mrs.</option>
+                                                <option value="Miss.">Miss.</option>
+                                            </select>
+                                            <div id="studentPrefixError" class="text-danger" style="font-size: 0.875em; display: none;">Select a prefix.</div>
+                                        </div>
+                                        <div style="flex-grow: 2; position: relative; margin-left: 0px; width: 200px;">
+                                            <label for="StuName"><b>Student Name</b> <span style="color: red;">*</span></label><br>
+                                            <input type="text" class="form-control" id="StuName" placeholder="Student Name" style="text-transform: uppercase;">
+                                            <div id="studentNameError" class="text-danger" style="font-size: 0.875em; display: none;">Please enter a student name.</div><br>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Father's Name and Prefix -->
+                                    <div class="col-md-4" style="display: flex;">
+                                        <div style="flex-grow: 0; width: 83px; position: relative;">
+                                            <label for="fatherPrefix"><b>Prefix</b> <span style="color: red;">*</span></label>
+                                            <select id="fatherPrefix" class="form-control prefix-select">
+                                                <option value="" disabled selected>Prefix</option>
+                                                <option value="Dr.">Dr.</option>
+                                                <option value="Prof.">Prof.</option>
+                                                <option value="Mr.">Mr.</option>
+                                            </select>
+                                            <div id="fatherPrefixError" class="text-danger" style="font-size: 0.875em; display: none;">Select a prefix.</div>
+                                        </div>
+                                        <div style="flex-grow: 2; position: relative; margin-left: 0px; width: 200px;">
+                                            <label for="FatName"><b>Father's Name</b> <span style="color: red;">*</span></label><br>
+                                            <input type="text" class="form-control" id="FatName" placeholder="Father's Name" style="text-transform: uppercase;">
+                                            <div id="fatherNameError" class="text-danger" style="font-size: 0.875em; display: none;">Please enter father's name.</div><br>
+                                        </div>
+                                    </div>
+                                
+                                    <!-- Mother's Name and Prefix -->
+                                    <div class="col-md-4" style="display: flex;">
+                                        <div style="flex-grow: 0; width: 83px; position: relative;">
+                                            <label for="motherPrefix"><b>Prefix</b> <span style="color: red;">*</span></label><br>
+                                            <select id="motherPrefix" class="form-control prefix-select">
+                                                <option value="" disabled selected>Prefix</option>
+                                                <option value="Dr.">Dr.</option>
+                                                <option value="Prof.">Prof.</option>
+                                                <option value="Mrs.">Mrs.</option>
+                                            </select>
+                                            <div id="motherPrefixError" class="text-danger" style="font-size: 0.875em; display: none;">Select a prefix.</div>
+                                        </div>
+                                        <div style="flex-grow: 2; position: relative; margin-left: 0px; width: 200px;">
+                                            <label for="MothName"><b>Mother's Name</b> <span style="color: red;">*</span></label><br>
+                                            <input type="text" class="form-control" id="MothName" placeholder="Mother's Name" style="text-transform: uppercase;">
+                                            <div id="motherNameError" class="text-danger" style="font-size: 0.875em; display: none;">Please enter mother's name.</div><br>
+                                        </div>
+                                    </div>
+                            
+                                    <div class="col-md-4" style="display: flex;">
+                                        <!-- Country Code Selection (if ) -->
+                                        <div style="flex-grow: 1; width: 98px; position: relative;">
+                                            <label for="cc-student"><b>Dial Code</b> <span style="color: red;">*</span></label>
+                                            <select id="cc-student" class="form-control cc-select">
+                                                <option value="" data-flag="" disabled selected>Select</option> <!-- No flag for the default option -->
+                                                <option value="+91" data-flag="https://flagcdn.com/w20/in.png">🇮🇳 +91</option>
+                                                <option value="+1" data-flag="https://flagcdn.com/w20/us.png">🇺🇸 +1</option>
+                                                <option value="+44" data-flag="https://flagcdn.com/w20/gb.png">🇬🇧 +44</option>
+                                                <option value="+81" data-flag="https://flagcdn.com/w20/jp.png">🇯🇵 +81</option>
+                                                <option value="+49" data-flag="https://flagcdn.com/w20/de.png">🇩🇪 +49</option>
+                                                <option value="+33" data-flag="https://flagcdn.com/w20/fr.png">🇫🇷 +33</option>
+                                                <option value="+61" data-flag="https://flagcdn.com/w20/au.png">🇦🇺 +61</option>
+                                                <option value="+86" data-flag="https://flagcdn.com/w20/cn.png">🇨🇳 +86</option>
+                                                <option value="+7" data-flag="https://flagcdn.com/w20/ru.png">🇷🇺 +7</option>
+                                                <option value="+55" data-flag="https://flagcdn.com/w20/br.png">🇧🇷 +55</option>
+                                                <option value="+39" data-flag="https://flagcdn.com/w20/it.png">🇮🇹 +39</option>
+                                                <option value="+34" data-flag="https://flagcdn.com/w20/es.png">🇪🇸 +34</option>
+                                                <option value="+62" data-flag="https://flagcdn.com/w20/id.png">🇮🇩 +62</option>
+                                                <option value="+63" data-flag="https://flagcdn.com/w20/ph.png">🇵🇭 +63</option>
+                                                <option value="+31" data-flag="https://flagcdn.com/w20/nl.png">🇳🇱 +31</option>
+                                                <option value="+27" data-flag="https://flagcdn.com/w20/za.png">🇿🇦 +27</option>
+                                                <option value="+90" data-flag="https://flagcdn.com/w20/tr.png">🇹🇷 +90</option>
+                                                <option value="+66" data-flag="https://flagcdn.com/w20/th.png">🇹🇭 +66</option>
+                                                <option value="+966" data-flag="https://flagcdn.com/w20/sa.png">🇸🇦 +966</option>
+                                                <option value="+971" data-flag="https://flagcdn.com/w20/ae.png">🇦🇪 +971</option>
+                                                <option value="+880" data-flag="https://flagcdn.com/w20/bd.png">🇧🇩 +880</option>
+                                                <option value="+94" data-flag="https://flagcdn.com/w20/lk.png">🇱🇰 +94</option>
+                                                <option value="+974" data-flag="https://flagcdn.com/w20/qa.png">🇶🇦 +974</option>
+                                                <option value="+968" data-flag="https://flagcdn.com/w20/om.png">🇴🇲 +968</option>
+                                                <option value="+960" data-flag="https://flagcdn.com/w20/mv.png">🇲🇻 +960</option>
+                                                <option value="+974" data-flag="https://flagcdn.com/w20/qa.png">🇶🇦 +974</option>
+                                                <option value="+965" data-flag="https://flagcdn.com/w20/kw.png">🇰🇼 +965</option>
+                                            </select> 
+                                            <div id="cc-student-error" class="text-danger" style="font-size: 12px; display: none;">Select a dial code.</div>                                              
+                                        </div>
+                                
+                                        <!-- Mobile Number Input -->
+                                        <div style="flex-grow: 3; position: relative; margin-left: 0px; width: 200px;">
+                                            <label for="MobNum"><b>Student's Mobile Number</b> <span style="color: red;">*</span></label>
+                                            <input type="text" class="form-control" id="MobNum" placeholder="MOBILE NUMBER">
+                                            <div id="mobnum-error" class="text-danger" style="font-size: 0.875em; display: none;">Please enter the mobile number.</div><br>
+                                        </div>
+                                    </div>
+                            
+                                    <div class="col-md-4" style="display: flex;">
+                                        <!-- Country Code Selection (if ) -->
+                                        <div style="flex-grow: 1; width: 98px; position: relative;">
+                                            <label for="cc-father"><b>Dial Code</b> <span style="color: red;">*</span></label>
+                                            <select id="cc-father" class="form-control cc-select">
+                                                <option value="" data-flag="" disabled selected>Select</option> <!-- No flag for the default option -->
+                                                <option value="+91" data-flag="https://flagcdn.com/w20/in.png">🇮🇳 +91</option>
+                                                <option value="+1" data-flag="https://flagcdn.com/w20/us.png">🇺🇸 +1</option>
+                                                <option value="+44" data-flag="https://flagcdn.com/w20/gb.png">🇬🇧 +44</option>
+                                                <option value="+81" data-flag="https://flagcdn.com/w20/jp.png">🇯🇵 +81</option>
+                                                <option value="+49" data-flag="https://flagcdn.com/w20/de.png">🇩🇪 +49</option>
+                                                <option value="+33" data-flag="https://flagcdn.com/w20/fr.png">🇫🇷 +33</option>
+                                                <option value="+61" data-flag="https://flagcdn.com/w20/au.png">🇦🇺 +61</option>
+                                                <option value="+86" data-flag="https://flagcdn.com/w20/cn.png">🇨🇳 +86</option>
+                                                <option value="+7" data-flag="https://flagcdn.com/w20/ru.png">🇷🇺 +7</option>
+                                                <option value="+55" data-flag="https://flagcdn.com/w20/br.png">🇧🇷 +55</option>
+                                                <option value="+39" data-flag="https://flagcdn.com/w20/it.png">🇮🇹 +39</option>
+                                                <option value="+34" data-flag="https://flagcdn.com/w20/es.png">🇪🇸 +34</option>
+                                                <option value="+62" data-flag="https://flagcdn.com/w20/id.png">🇮🇩 +62</option>
+                                                <option value="+63" data-flag="https://flagcdn.com/w20/ph.png">🇵🇭 +63</option>
+                                                <option value="+31" data-flag="https://flagcdn.com/w20/nl.png">🇳🇱 +31</option>
+                                                <option value="+27" data-flag="https://flagcdn.com/w20/za.png">🇿🇦 +27</option>
+                                                <option value="+90" data-flag="https://flagcdn.com/w20/tr.png">🇹🇷 +90</option>
+                                                <option value="+66" data-flag="https://flagcdn.com/w20/th.png">🇹🇭 +66</option>
+                                                <option value="+966" data-flag="https://flagcdn.com/w20/sa.png">🇸🇦 +966</option>
+                                                <option value="+971" data-flag="https://flagcdn.com/w20/ae.png">🇦🇪 +971</option>
+                                                <option value="+880" data-flag="https://flagcdn.com/w20/bd.png">🇧🇩 +880</option>
+                                                <option value="+94" data-flag="https://flagcdn.com/w20/lk.png">🇱🇰 +94</option>
+                                                <option value="+974" data-flag="https://flagcdn.com/w20/qa.png">🇶🇦 +974</option>
+                                                <option value="+968" data-flag="https://flagcdn.com/w20/om.png">🇴🇲 +968</option>
+                                                <option value="+960" data-flag="https://flagcdn.com/w20/mv.png">🇲🇻 +960</option>
+                                                <option value="+974" data-flag="https://flagcdn.com/w20/qa.png">🇶🇦 +974</option>
+                                                <option value="+965" data-flag="https://flagcdn.com/w20/kw.png">🇰🇼 +965</option>
+                                            </select> 
+                                            <div id="cc-father-error" class="text-danger" style="font-size: 12px; display: none;">Select a dial code.</div>                                              
+                                        </div>
+                                
+                                        <!-- Mobile Number Input -->
+                                        <div style="flex-grow: 3; position: relative; margin-left: 0px; width: 200px;">
+                                            <label for="FatMobNum"><b>Father's Mobile Number</b> <span style="color: red;">*</span></label>
+                                            <input type="text" class="form-control" id="FatMobNum" placeholder="MOBILE NUMBER">
+                                            <div id="fatmobnum-error" class="text-danger" style="font-size: 0.875em; display: none;">Please enter the mobile number.</div><br>
+                                        </div>
+                                    </div>
+                            
+                                    <div class="col-md-4" style="display: flex;">
+                                        <!-- Country Code Selection (if ) -->
+                                        <div style="flex-grow: 1; width: 98px; position: relative;">
+                                            <label for="cc-mother"><b>Dial Code</b> <span style="color: red;">*</span></label>
+                                            <select id="cc-mother" class="form-control cc-select">
+                                                <option value="" data-flag="" disabled selected>Select</option> <!-- No flag for the default option -->
+                                                <option value="+91" data-flag="https://flagcdn.com/w20/in.png">🇮🇳 +91</option>
+                                                <option value="+1" data-flag="https://flagcdn.com/w20/us.png">🇺🇸 +1</option>
+                                                <option value="+44" data-flag="https://flagcdn.com/w20/gb.png">🇬🇧 +44</option>
+                                                <option value="+81" data-flag="https://flagcdn.com/w20/jp.png">🇯🇵 +81</option>
+                                                <option value="+49" data-flag="https://flagcdn.com/w20/de.png">🇩🇪 +49</option>
+                                                <option value="+33" data-flag="https://flagcdn.com/w20/fr.png">🇫🇷 +33</option>
+                                                <option value="+61" data-flag="https://flagcdn.com/w20/au.png">🇦🇺 +61</option>
+                                                <option value="+86" data-flag="https://flagcdn.com/w20/cn.png">🇨🇳 +86</option>
+                                                <option value="+7" data-flag="https://flagcdn.com/w20/ru.png">🇷🇺 +7</option>
+                                                <option value="+55" data-flag="https://flagcdn.com/w20/br.png">🇧🇷 +55</option>
+                                                <option value="+39" data-flag="https://flagcdn.com/w20/it.png">🇮🇹 +39</option>
+                                                <option value="+34" data-flag="https://flagcdn.com/w20/es.png">🇪🇸 +34</option>
+                                                <option value="+62" data-flag="https://flagcdn.com/w20/id.png">🇮🇩 +62</option>
+                                                <option value="+63" data-flag="https://flagcdn.com/w20/ph.png">🇵🇭 +63</option>
+                                                <option value="+31" data-flag="https://flagcdn.com/w20/nl.png">🇳🇱 +31</option>
+                                                <option value="+27" data-flag="https://flagcdn.com/w20/za.png">🇿🇦 +27</option>
+                                                <option value="+90" data-flag="https://flagcdn.com/w20/tr.png">🇹🇷 +90</option>
+                                                <option value="+66" data-flag="https://flagcdn.com/w20/th.png">🇹🇭 +66</option>
+                                                <option value="+966" data-flag="https://flagcdn.com/w20/sa.png">🇸🇦 +966</option>
+                                                <option value="+971" data-flag="https://flagcdn.com/w20/ae.png">🇦🇪 +971</option>
+                                                <option value="+880" data-flag="https://flagcdn.com/w20/bd.png">🇧🇩 +880</option>
+                                                <option value="+94" data-flag="https://flagcdn.com/w20/lk.png">🇱🇰 +94</option>
+                                                <option value="+974" data-flag="https://flagcdn.com/w20/qa.png">🇶🇦 +974</option>
+                                                <option value="+968" data-flag="https://flagcdn.com/w20/om.png">🇴🇲 +968</option>
+                                                <option value="+960" data-flag="https://flagcdn.com/w20/mv.png">🇲🇻 +960</option>
+                                                <option value="+974" data-flag="https://flagcdn.com/w20/qa.png">🇶🇦 +974</option>
+                                                <option value="+965" data-flag="https://flagcdn.com/w20/kw.png">🇰🇼 +965</option>
+                                            </select> 
+                                            <div id="cc-mother-error" class="text-danger" style="font-size: 12px; display: none;">Select a dial code.</div>                                              
+                                        </div>
+                                
+                                        <!-- Mobile Number Input -->
+                                        <div style="flex-grow: 3; position: relative; margin-left: 0px; width: 200px;">
+                                            <label for="MothMobNum"><b>Mother's Mobile Number</b> <span style="color: red;">*</span></label>
+                                            <input type="text" class="form-control" id="MothMobNum" placeholder="MOBILE NUMBER">
+                                            <div id="motmobnum-error" class="text-danger" style="font-size: 0.875em; display: none;">Please enter the mobile number.</div><br>
+                                        </div>
+                                    </div>
+                                
+                                    <!-- School/College Name and Other Details -->
+                                    <div class="col-md-4">
+                                        <label for="schoolName">School / College Name and Address <span style="color: red;">*</span></label>
+                                        <input type="text" id="schoolName" class="form-control" required>
+                                        <div id="schoolNameError" class="text-danger" style="font-size: 0.875em; display: none;">Please enter the school/college name and address.</div><br>
+                                    </div>
+                                    
+                                    <div class="col-md-4">
+                                        <label for="standard">Standard / Division / Course <span style="color: red;">*</span></label><br>
+                                        <input type="text" id="standard" class="form-control" required>
+                                        <div id="standardError" class="text-danger" style="font-size: 0.875em; display: none;">Please enter the standard/division.</div><br>
+                                    </div>
+                                
+                                    <div class="col-md-4">
+                                        <label for="startYear">Year of Study From <span style="color: red;">*</span></label><br>
+                                        <input type="number" id="startYear" class="form-control" required>
+                                        <div id="startYearError" class="text-danger" style="font-size: 0.875em; display: none;">Please enter the year of start.</div><br>
+                                    </div>
+                                
+                                    <div class="col-md-4">
+                                        <label for="endYear">Year of Study To <span style="color: red;">*</span></label><br>
+                                        <input type="number" id="endYear" class="form-control" required>
+                                        <div id="endYearError" class="text-danger" style="font-size: 0.875em; display: none;">Please enter the year of passing.</div><br>
+                                    </div>
+                                
+                                    <div class="col-md-4">
+                                        <label for="board">Board / University <span style="color: red;">*</span></label><br>
+                                        <select id="board" class="form-control" required style="text-transform: uppercase;">
+                                            <option value="" disabled selected>Select Board / University</option>
+                                            <option value="Central Board of Secondary Education (CBSE)">Central Board of Secondary Education (CBSE)</option>
+                                            <option value="Karnataka State Education and Assessment Board (KSEAB Karnataka)">Karnataka State Education and Assessment Board (KSEAB Karnataka)</option>
+                                            <option value="Department of Pre-University Education (DPUE Karnataka)">Department of Pre-University Education (DPUE Karnataka)</option>
+                                            <option value="Visvesvaraya Technological University (VTU, Belagavi, Karnataka)">Visvesvaraya Technological University (VTU, Belagavi Karnataka)</option>
+                                            <option value="Bangalore University (BU, Karnataka)">Bangalore University (BU, Karnataka)</option>
+                                            <option value="Indian Institute of Science (IISc, Bangalore, Karnataka)">Indian Institute of Science (IISc, Bangalore Karnataka)</option>
+                                            <option value="Indian Institute of Technology, Kanpur">Indian Institute of Technology, Kanpur</option>
+                                            <option value="Indian Institute of Technology, Delhi">Indian Institute of Technology, Delhi</option>
+                                            <option value="Indian Institute of Technology, Kanpur">Indian Institute of Technology, Kanpur</option>
+                                            <option value="Indian Institute of Technology, Kanpur">Indian Institute of Technology, Kanpur</option>
+                                            <option value="University of Delhi">University of Delhi</option>
+                                            <option value="University of Calcutta">University of Calcutta</option>
+                                            <option value="University of Madras">University of Madras</option>
+                                        </select>
+                                        <div id="boardError" class="text-danger" style="font-size: 0.875em; display: none;">Please select the board/university.</div><br>
+                                    </div>
+                                
+                                    <div class="col-md-4">
+                                        <label for="totalYears">Total Years <span style="color: red;">*</span></label>
+                                        <input type="number" id="totalYears" class="form-control" readonly><br>
+                                        <div id="totalYearsError" class="text-danger" style="font-size: 0.875em; display: none;">Please enter the total years.</div><br>
+                                    </div>
 
-		<div class="col-md-4" style="display: flex;">
-			<!-- Country Code Selection (if ) -->
-			<div style="flex-grow: 1; width: 98px; position: relative;">
-				<label for="cc-student"><b>Dial Code</b> <span style="color: red;">*</span></label>
-				<select id="cc-student" class="form-control cc-select">
-					<option value="" data-flag="" disabled selected>Select</option> <!-- No flag for the default option -->
-					<option value="+91" data-flag="https://flagcdn.com/w20/in.png">🇮🇳 +91</option>
-					<option value="+1" data-flag="https://flagcdn.com/w20/us.png">🇺🇸 +1</option>
-					<option value="+44" data-flag="https://flagcdn.com/w20/gb.png">🇬🇧 +44</option>
-					<option value="+81" data-flag="https://flagcdn.com/w20/jp.png">🇯🇵 +81</option>
-					<option value="+49" data-flag="https://flagcdn.com/w20/de.png">🇩🇪 +49</option>
-					<option value="+33" data-flag="https://flagcdn.com/w20/fr.png">🇫🇷 +33</option>
-					<option value="+61" data-flag="https://flagcdn.com/w20/au.png">🇦🇺 +61</option>
-					<option value="+86" data-flag="https://flagcdn.com/w20/cn.png">🇨🇳 +86</option>
-					<option value="+7" data-flag="https://flagcdn.com/w20/ru.png">🇷🇺 +7</option>
-					<option value="+55" data-flag="https://flagcdn.com/w20/br.png">🇧🇷 +55</option>
-					<option value="+39" data-flag="https://flagcdn.com/w20/it.png">🇮🇹 +39</option>
-					<option value="+34" data-flag="https://flagcdn.com/w20/es.png">🇪🇸 +34</option>
-					<option value="+62" data-flag="https://flagcdn.com/w20/id.png">🇮🇩 +62</option>
-					<option value="+63" data-flag="https://flagcdn.com/w20/ph.png">🇵🇭 +63</option>
-					<option value="+31" data-flag="https://flagcdn.com/w20/nl.png">🇳🇱 +31</option>
-					<option value="+27" data-flag="https://flagcdn.com/w20/za.png">🇿🇦 +27</option>
-					<option value="+90" data-flag="https://flagcdn.com/w20/tr.png">🇹🇷 +90</option>
-					<option value="+66" data-flag="https://flagcdn.com/w20/th.png">🇹🇭 +66</option>
-					<option value="+966" data-flag="https://flagcdn.com/w20/sa.png">🇸🇦 +966</option>
-					<option value="+971" data-flag="https://flagcdn.com/w20/ae.png">🇦🇪 +971</option>
-					<option value="+880" data-flag="https://flagcdn.com/w20/bd.png">🇧🇩 +880</option>
-					<option value="+94" data-flag="https://flagcdn.com/w20/lk.png">🇱🇰 +94</option>
-					<option value="+974" data-flag="https://flagcdn.com/w20/qa.png">🇶🇦 +974</option>
-					<option value="+968" data-flag="https://flagcdn.com/w20/om.png">🇴🇲 +968</option>
-					<option value="+960" data-flag="https://flagcdn.com/w20/mv.png">🇲🇻 +960</option>
-					<option value="+974" data-flag="https://flagcdn.com/w20/qa.png">🇶🇦 +974</option>
-					<option value="+965" data-flag="https://flagcdn.com/w20/kw.png">🇰🇼 +965</option>
-				</select> 
-                <div id="cc-student-error" class="text-danger" style="font-size: 12px; display: none;">Select a dial code.</div>                                              
-			</div>
-	
-			<!-- Mobile Number Input -->
-			<div style="flex-grow: 3; position: relative; margin-left: 0px; width: 200px;">
-				<label for="MobNum"><b>Student's Mobile Number</b> <span style="color: red;">*</span></label>
-				<input type="text" class="form-control" id="MobNum" placeholder="MOBILE NUMBER">
-                <div id="mobnum-error" class="text-danger" style="font-size: 0.875em; display: none;">Please enter the mobile number.</div><br>
-			</div>
-		</div>
+                                    <div class="col-md-4">
+                                        <label for="yearofPassing">Year of Passing <span style="color: red;">*</span></label>
+                                        <input type="number" name="yearofPassing" id="yearofPassing" class="form-control">
+                                        <div id="yearofPassingError" class="text-danger" style="font-size: 0.875em; display: none;">Please enter the year of passing.</div><br>
+                                    </div>
 
-        <div class="col-md-4" style="display: flex;">
-			<!-- Country Code Selection (if ) -->
-			<div style="flex-grow: 1; width: 98px; position: relative;">
-				<label for="cc-father"><b>Dial Code</b> <span style="color: red;">*</span></label>
-				<select id="cc-father" class="form-control cc-select">
-					<option value="" data-flag="" disabled selected>Select</option> <!-- No flag for the default option -->
-					<option value="+91" data-flag="https://flagcdn.com/w20/in.png">🇮🇳 +91</option>
-					<option value="+1" data-flag="https://flagcdn.com/w20/us.png">🇺🇸 +1</option>
-					<option value="+44" data-flag="https://flagcdn.com/w20/gb.png">🇬🇧 +44</option>
-					<option value="+81" data-flag="https://flagcdn.com/w20/jp.png">🇯🇵 +81</option>
-					<option value="+49" data-flag="https://flagcdn.com/w20/de.png">🇩🇪 +49</option>
-					<option value="+33" data-flag="https://flagcdn.com/w20/fr.png">🇫🇷 +33</option>
-					<option value="+61" data-flag="https://flagcdn.com/w20/au.png">🇦🇺 +61</option>
-					<option value="+86" data-flag="https://flagcdn.com/w20/cn.png">🇨🇳 +86</option>
-					<option value="+7" data-flag="https://flagcdn.com/w20/ru.png">🇷🇺 +7</option>
-					<option value="+55" data-flag="https://flagcdn.com/w20/br.png">🇧🇷 +55</option>
-					<option value="+39" data-flag="https://flagcdn.com/w20/it.png">🇮🇹 +39</option>
-					<option value="+34" data-flag="https://flagcdn.com/w20/es.png">🇪🇸 +34</option>
-					<option value="+62" data-flag="https://flagcdn.com/w20/id.png">🇮🇩 +62</option>
-					<option value="+63" data-flag="https://flagcdn.com/w20/ph.png">🇵🇭 +63</option>
-					<option value="+31" data-flag="https://flagcdn.com/w20/nl.png">🇳🇱 +31</option>
-					<option value="+27" data-flag="https://flagcdn.com/w20/za.png">🇿🇦 +27</option>
-					<option value="+90" data-flag="https://flagcdn.com/w20/tr.png">🇹🇷 +90</option>
-					<option value="+66" data-flag="https://flagcdn.com/w20/th.png">🇹🇭 +66</option>
-					<option value="+966" data-flag="https://flagcdn.com/w20/sa.png">🇸🇦 +966</option>
-					<option value="+971" data-flag="https://flagcdn.com/w20/ae.png">🇦🇪 +971</option>
-					<option value="+880" data-flag="https://flagcdn.com/w20/bd.png">🇧🇩 +880</option>
-					<option value="+94" data-flag="https://flagcdn.com/w20/lk.png">🇱🇰 +94</option>
-					<option value="+974" data-flag="https://flagcdn.com/w20/qa.png">🇶🇦 +974</option>
-					<option value="+968" data-flag="https://flagcdn.com/w20/om.png">🇴🇲 +968</option>
-					<option value="+960" data-flag="https://flagcdn.com/w20/mv.png">🇲🇻 +960</option>
-					<option value="+974" data-flag="https://flagcdn.com/w20/qa.png">🇶🇦 +974</option>
-					<option value="+965" data-flag="https://flagcdn.com/w20/kw.png">🇰🇼 +965</option>
-				</select> 
-                <div id="cc-father-error" class="text-danger" style="font-size: 12px; display: none;">Select a dial code.</div>                                              
-			</div>
-	
-			<!-- Mobile Number Input -->
-			<div style="flex-grow: 3; position: relative; margin-left: 0px; width: 200px;">
-				<label for="FatMobNum"><b>Father's Mobile Number</b> <span style="color: red;">*</span></label>
-				<input type="text" class="form-control" id="FatMobNum" placeholder="MOBILE NUMBER">
-                <div id="fatmobnum-error" class="text-danger" style="font-size: 0.875em; display: none;">Please enter the mobile number.</div><br>
-			</div>
-		</div>
+                                    <div class="col-md-4">
+                                        <label for="email">Email ID <span style="color: red;">*</span></label>
+                                        <input type="email" name="email" id="email" class="form-control">
+                                        <div id="emailError" class="text-danger" style="font-size: 0.875em; display: none;">Please enter the email ID.</div><br>
+                                    </div>
 
-        <div class="col-md-4" style="display: flex;">
-			<!-- Country Code Selection (if ) -->
-			<div style="flex-grow: 1; width: 98px; position: relative;">
-				<label for="cc-mother"><b>Dial Code</b> <span style="color: red;">*</span></label>
-				<select id="cc-mother" class="form-control cc-select">
-					<option value="" data-flag="" disabled selected>Select</option> <!-- No flag for the default option -->
-					<option value="+91" data-flag="https://flagcdn.com/w20/in.png">🇮🇳 +91</option>
-					<option value="+1" data-flag="https://flagcdn.com/w20/us.png">🇺🇸 +1</option>
-					<option value="+44" data-flag="https://flagcdn.com/w20/gb.png">🇬🇧 +44</option>
-					<option value="+81" data-flag="https://flagcdn.com/w20/jp.png">🇯🇵 +81</option>
-					<option value="+49" data-flag="https://flagcdn.com/w20/de.png">🇩🇪 +49</option>
-					<option value="+33" data-flag="https://flagcdn.com/w20/fr.png">🇫🇷 +33</option>
-					<option value="+61" data-flag="https://flagcdn.com/w20/au.png">🇦🇺 +61</option>
-					<option value="+86" data-flag="https://flagcdn.com/w20/cn.png">🇨🇳 +86</option>
-					<option value="+7" data-flag="https://flagcdn.com/w20/ru.png">🇷🇺 +7</option>
-					<option value="+55" data-flag="https://flagcdn.com/w20/br.png">🇧🇷 +55</option>
-					<option value="+39" data-flag="https://flagcdn.com/w20/it.png">🇮🇹 +39</option>
-					<option value="+34" data-flag="https://flagcdn.com/w20/es.png">🇪🇸 +34</option>
-					<option value="+62" data-flag="https://flagcdn.com/w20/id.png">🇮🇩 +62</option>
-					<option value="+63" data-flag="https://flagcdn.com/w20/ph.png">🇵🇭 +63</option>
-					<option value="+31" data-flag="https://flagcdn.com/w20/nl.png">🇳🇱 +31</option>
-					<option value="+27" data-flag="https://flagcdn.com/w20/za.png">🇿🇦 +27</option>
-					<option value="+90" data-flag="https://flagcdn.com/w20/tr.png">🇹🇷 +90</option>
-					<option value="+66" data-flag="https://flagcdn.com/w20/th.png">🇹🇭 +66</option>
-					<option value="+966" data-flag="https://flagcdn.com/w20/sa.png">🇸🇦 +966</option>
-					<option value="+971" data-flag="https://flagcdn.com/w20/ae.png">🇦🇪 +971</option>
-					<option value="+880" data-flag="https://flagcdn.com/w20/bd.png">🇧🇩 +880</option>
-					<option value="+94" data-flag="https://flagcdn.com/w20/lk.png">🇱🇰 +94</option>
-					<option value="+974" data-flag="https://flagcdn.com/w20/qa.png">🇶🇦 +974</option>
-					<option value="+968" data-flag="https://flagcdn.com/w20/om.png">🇴🇲 +968</option>
-					<option value="+960" data-flag="https://flagcdn.com/w20/mv.png">🇲🇻 +960</option>
-					<option value="+974" data-flag="https://flagcdn.com/w20/qa.png">🇶🇦 +974</option>
-					<option value="+965" data-flag="https://flagcdn.com/w20/kw.png">🇰🇼 +965</option>
-				</select> 
-                <div id="cc-mother-error" class="text-danger" style="font-size: 12px; display: none;">Select a dial code.</div>                                              
-			</div>
-	
-			<!-- Mobile Number Input -->
-			<div style="flex-grow: 3; position: relative; margin-left: 0px; width: 200px;">
-				<label for="MothMobNum"><b>Mother's Mobile Number</b> <span style="color: red;">*</span></label>
-				<input type="text" class="form-control" id="MothMobNum" placeholder="MOBILE NUMBER">
-                <div id="motmobnum-error" class="text-danger" style="font-size: 0.875em; display: none;">Please enter the mobile number.</div><br>
-			</div>
-		</div>
-	
-		<!-- School/College Name and Other Details -->
-		<div class="col-md-4">
-			<label for="schoolName">School / College Name and Address <span style="color: red;">*</span></label>
-			<input type="text" id="schoolName" class="form-control" required>
-			<div id="schoolNameError" class="text-danger" style="font-size: 0.875em; display: none;">Please enter the school/college name and address.</div><br>
-		</div>
-		
-		<div class="col-md-4">
-			<label for="standard">Standard / Division / Course <span style="color: red;">*</span></label><br>
-			<input type="text" id="standard" class="form-control" required>
-			<div id="standardError" class="text-danger" style="font-size: 0.875em; display: none;">Please enter the standard/division.</div><br>
-		</div>
-	
-		<div class="col-md-4">
-			<label for="startYear">Year of Start <span style="color: red;">*</span></label><br>
-			<input type="number" id="startYear" class="form-control" required>
-			<div id="startYearError" class="text-danger" style="font-size: 0.875em; display: none;">Please enter the year of start.</div><br>
-		</div>
-	
-		<div class="col-md-4">
-			<label for="passingYear">Year of Passing <span style="color: red;">*</span></label><br>
-			<input type="number" id="passingYear" class="form-control" required>
-			<div id="passingYearError" class="text-danger" style="font-size: 0.875em; display: none;">Please enter the year of passing.</div><br>
-		</div>
-	
-		<div class="col-md-4">
-			<label for="board">Board / University <span style="color: red;">*</span></label><br>
-			<select id="board" class="form-control" required style="text-transform: uppercase;">
-                <option value="" disabled selected>Select Board / University</option>
-                <option value="Central Board of Secondary Education (CBSE)">Central Board of Secondary Education (CBSE)</option>
-                <option value="Karnataka State Education and Assessment Board (KSEAB Karnataka)">Karnataka State Education and Assessment Board (KSEAB Karnataka)</option>
-                <option value="Department of Pre-University Education (DPUE Karnataka)">Department of Pre-University Education (DPUE Karnataka)</option>
-                <option value="Visvesvaraya Technological University (VTU, Belagavi, Karnataka)">Visvesvaraya Technological University (VTU, Belagavi Karnataka)</option>
-                <option value="Bangalore University (BU, Karnataka)">Bangalore University (BU, Karnataka)</option>
-                <option value="Indian Institute of Science (IISc, Bangalore, Karnataka)">Indian Institute of Science (IISc, Bangalore Karnataka)</option>
-                <option value="Indian Institute of Technology, Kanpur">Indian Institute of Technology, Kanpur</option>
-                <option value="Indian Institute of Technology, Delhi">Indian Institute of Technology, Delhi</option>
-                <option value="Indian Institute of Technology, Kanpur">Indian Institute of Technology, Kanpur</option>
-                <option value="Indian Institute of Technology, Kanpur">Indian Institute of Technology, Kanpur</option>
-                <option value="University of Delhi">University of Delhi</option>
-                <option value="University of Calcutta">University of Calcutta</option>
-                <option value="University of Madras">University of Madras</option>
-            </select>
-			<div id="boardError" class="text-danger" style="font-size: 0.875em; display: none;">Please select the board/university.</div><br>
-		</div>
-	
-		<div class="col-md-4">
-			<label for="totalYears">Total Years <span style="color: red;">*</span></label><br>
-			<input type="number" id="totalYears" class="form-control" readonly><br>
-		</div>
-	
-		<div class="col-md-12" style="align-items: center;">
-			<button type="button" id="addData" class="btn btn-primary">Add Data</button><br>
-		</div>
-	</form>
-	
-	<!-- Table Section to Display Data -->
-	<div class="table-responsive mt-4">
-        <table id="educationTable" class="table table-striped table-bordered" style="width:100%">
-            <thead>
-                <tr>
-                    <th>Sl. No.</th>
-                    <th>Student Name</th>
-                    <th>Father's Name</th>
-                    <th>Mother's Name</th>
-                    <th>Student's Mobile Number</th>
-                    <th>Father's Mobile Number</th>
-                    <th>Mother's Mobile Number</th>
-                    <th>School / College Name and Address</th>
-                    <th>Standard / Division / Course</th>
-                    <th>Year of Start</th>
-                    <th>Year of Passing</th>
-                    <th>Board / University</th>
-                    <th>Total Years</th>
-					<th>Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Dynamic Data Rows Go Here -->
-            </tbody>
-        </table>
-    </div>
-</div>
+                                    <div class="col-md-4">
+                                        <label for="dateofBirth">Date of Birth <span style="color: red;">*</span></label>
+                                        <input type="date" name="dateofBirth" id="dateofBirth" class="form-control">
+                                        <div id="dateofBirthError" class="text-danger" style="font-size: 0.875em; display: none;">Please enter the date of birth.</div><br>
+                                    </div>
+                                    
+                                    <div class="row" style="margin-bottom: 20px; margin-left: 15px; margin-right: 15px;">
+                                        <div class="col-md-3 text-center">
+                                            <button type="reset" name="reset" class="btn btn-warning" style="width:100%">RESET</button>
+                                        </div>
+                                        <div class="col-md-6" style="margin-bottom: 5px;"></div>
+                                        <div class="col-md-3 text-center" style="margin-bottom:5px;">
+                                            <button type="button" name="addData" id="addData" class="btn btn-success" style="width:100%">ADD DATA</button>
+                                        </div>            
+                                    </div>
+                                </form>
 
-<!-- Include jQuery and DataTable JS -->
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/buttons/2.4.1/js/dataTables.buttons.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
-<script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.print.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
-<script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.html5.min.js"></script>
-<script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.bootstrap5.min.js"></script>
+                                <div class="panel panel-danger">
+                                    <div class="panel-heading">
+                                        <span style="color:black;font-size:1.2em">VERIFY EDUCATION DETAILS</span>
+                                    </div>
+                                <!-- Table Section to Display Data -->
+                                <div class="table-responsive mt-4" style="margin-top: 20px;margin-left: 20px; margin-right: 20px;">
+                                    <table id="educationTable" class="table table-striped table-bordered" style="width:100%">
+                                        <thead>
+                                            <tr>
+                                                <th>Sl. No.</th>
+                                                <th>Student Name</th>
+                                                <th>Father's Name</th>
+                                                <th>Mother's Name</th>
+                                                <th>Student's Mobile Number</th>
+                                                <th>Father's Mobile Number</th>
+                                                <th>Mother's Mobile Number</th>
+                                                <th>School / College Name and Address</th>
+                                                <th>Standard / Division / Course</th>
+                                                <th>Year of Study From</th>
+                                                <th>Year of Study To</th>
+                                                <th>Year of Passing</th>
+                                                <th>Board / University</th>
+                                                <th>Total Years</th>
+                                                <th>Email ID</th>
+                                                <th>Date of Birth</th>
+                                                <th>Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <!-- Dynamic Data Rows Go Here -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                            
+                            <!-- Include jQuery and DataTable JS -->
+                            <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+                            <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+                            <script src="https://cdn.datatables.net/buttons/2.4.1/js/dataTables.buttons.min.js"></script>
+                            <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+                            <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
+                            <script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.print.min.js"></script>
+                            <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
+                            <script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.html5.min.js"></script>
+                            <script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.bootstrap5.min.js"></script>
+                            
+                            <script>
+                                $(document).ready(function () {
+                                // Initialize DataTable for #educationTable
+                                if (!$.fn.dataTable.isDataTable('#educationTable')) {
+                                    $('#educationTable').DataTable({
+                                        pageLength: 10, // Set the number of rows per page
+                                        lengthChange: true,
+                                        responsive: true,
+                                        ordering: false,
+                                        autoWidth: false,
+                                        scrollX: true, // Enable horizontal scrolling for better responsiveness
+                                        dom: '<"top"lBf>rt<"bottom"ip><"clear">', // Define the position for buttons
+                                        buttons: [
+                                            'copy', 'csv', 'excel', 'print',
+                                            {
+                                        extend: 'pdfHtml5',
+                                        text: 'Download PDF',
+                                        orientation: 'landscape', // Set PDF orientation to landscape
+                                        pageSize: 'A3', // Optional: Set the page size to A4
+                                        exportOptions: {
+                                            columns: ':visible' // Export only visible columns
+                                        },
+                                        customize: function (doc) {
+                                            doc.defaultStyle.fontSize = 10; // Adjust the font size if needed
+                                            doc.styles.tableHeader.fontSize = 12; // Adjust header font size
+                                        }
+                                    }
+                                        ],
+                                        
+                                    });
+                                }
+                                $(".dt-buttons").css({
+                                        "text-align": "center",
+                                        "margin": "0 auto", // Center the buttons
+                                        "margin-left": "50px"
+                                    });
+                            
+                                // Validate Form
+                                $(document).ready(function () {
+                                // Event listeners to hide error messages when the user starts typing
+                                $('#studentPrefix').on('input', function () {
+                                    $('#studentPrefixError').hide();
+                                });
+                                
+                                $('#StuName').on('input', function () {
+                                    $('#studentNameError').hide();
+                                });
+                            
+                                $('#fatherPrefix').on('input', function () {
+                                    $('#fatherPrefixError').hide();
+                                });
+                            
+                                $('#FatName').on('input', function () {
+                                    $('#fatherNameError').hide();
+                                });
+                            
+                                $('#motherPrefix').on('input', function () {
+                                    $('#motherPrefixError').hide();
+                                });
+                            
+                                $('#MothName').on('input', function () {
+                                    $('#motherNameError').hide();
+                                });
+                            
+                                $('#cc-student').on('change', function () {
+                                    $('#cc-student-error').hide();
+                                });
+                            
+                                $('#MobNum').on('input', function () {
+                                    $('#mobnum-error').hide();
+                                });
+                            
+                                $('#cc-father').on('change', function () {
+                                    $('#cc-father-error').hide();
+                                });
+                            
+                                $('#FatMobNum').on('input', function () {
+                                    $('#fatmobnum-error').hide();
+                                });
+                            
+                                $('#cc-mother').on('change', function () {
+                                    $('#cc-mother-error').hide();
+                                });
+                            
+                                $('#MothMobNum').on('input', function () {
+                                    $('#motmobnum-error').hide();
+                                });
+                            
+                                $('#schoolName').on('input', function () {
+                                    $('#schoolNameError').hide();
+                                });
+                            
+                                $('#standard').on('input', function () {
+                                    $('#standardError').hide();
+                                });
+                            
+                                $('#startYear').on('input', function () {
+                                    $('#startYearError').hide();
+                                });
+                            
+                                $('#endYear').on('input', function () {
+                                    $('#endYearError').hide();
+                                });
+                            
+                                $('#board').on('change', function () {
+                                    $('#boardError').hide();
+                                });
 
-<script>
-    $(document).ready(function () {
-    // Initialize DataTable for #educationTable
-    if (!$.fn.dataTable.isDataTable('#educationTable')) {
-        $('#educationTable').DataTable({
-            pageLength: 10, // Set the number of rows per page
-            lengthChange: true,
-            responsive: true,
-            ordering: false,
-            autoWidth: false,
-            scrollX: true, // Enable horizontal scrolling for better responsiveness
-            dom: 'Bfrtip', // Define the position for buttons
-            buttons: [
-                'copy', 'csv', 'excel', 'print',
-                {
-            extend: 'pdfHtml5',
-            text: 'Download PDF',
-            orientation: 'landscape', // Set PDF orientation to landscape
-            pageSize: 'A3', // Optional: Set the page size to A4
-            exportOptions: {
-                columns: ':visible' // Export only visible columns
-            },
-            customize: function (doc) {
-                doc.defaultStyle.fontSize = 10; // Adjust the font size if needed
-                doc.styles.tableHeader.fontSize = 12; // Adjust header font size
+                                $('#yearofPassing').on('input', function () {
+                                    $('#yearofPassingError').hide();
+                                });
+
+                                $('#email').on('input', function () {
+                                    $('#emailError').hide();
+                                });
+
+                                $('#dateofBirth').on('input', function () {
+                                    $('#dateofBirthError').hide();
+                                });
+                            });
+                            
+                            // Form Validation
+                            function validateForm() {
+                                let isValid = true;
+                            
+                                // Validate Student Prefix
+                                if ($('#studentPrefix').val() === null) {
+                                    $('#studentPrefixError').show();
+                                    isValid = false;
+                                } else {
+                                    $('#studentPrefixError').hide();
+                                }
+                            
+                                // Validate Student Name
+                                if ($('#StuName').val().trim() === "") {
+                                    $('#studentNameError').show();
+                                    isValid = false;
+                                } else {
+                                    $('#studentNameError').hide();
+                                }
+                            
+                                if ($('#fatherPrefix').val() === null) {
+                                    $('#fatherPrefixError').show();
+                                    isValid = false;
+                                } else {
+                                    $('#fatherPrefixError').hide();
+                                }
+                            
+                                // Validate Father's Name
+                                if ($('#FatName').val().trim() === "") {
+                                    $('#fatherNameError').show();
+                                    isValid = false;
+                                } else {
+                                    $('#fatherNameError').hide();
+                                }
+                            
+                                if ($('#motherPrefix').val() === null) {
+                                    $('#motherPrefixError').show();
+                                    isValid = false;
+                                } else {
+                                    $('#motherPrefixError').hide();
+                                }
+                            
+                                // Validate Mother's Name
+                                if ($('#MothName').val().trim() === "") {
+                                    $('#motherNameError').show();
+                                    isValid = false;
+                                } else {
+                                    $('#motherNameError').hide();
+                                }
+                            
+                                // Validate Dial Code
+                                if ($('#cc-student').val() === null || $('#cc-fatheR').val() === "") {
+                                    $('#cc-student-error').show();
+                                    isValid = false;
+                                } else {
+                                    $('#cc-student-error').hide();
+                                }
+                            
+                                // Validate Mobile Number
+                                const mobNum = $('#MobNum').val();
+                                if (!/^[0-9]{10}$/.test(mobNum)) {
+                                    $('#mobnum-error').show();
+                                    isValid = false;
+                                } else {
+                                    $('#mobnum-error').hide();
+                                }
+                            
+                                // Validate Dial Code
+                                if ($('#cc-father').val() === null || $('#cc-father').val() === "") {
+                                    $('#cc-father-error').show();
+                                    isValid = false;
+                                } else {
+                                    $('#cc-father-error').hide();
+                                }
+                            
+                                // Validate Mobile Number
+                                const fatmobnum = $('#FatMobNum').val();
+                                if (!/^[0-9]{10}$/.test(mobNum)) {
+                                    $('#fatmobnum-error').show();
+                                    isValid = false;
+                                } else {
+                                    $('#fatmobnum-error').hide();
+                                }
+                            
+                                // Validate Dial Code
+                                if ($('#cc-mother').val() === null || $('#cc-mother').val() === "") {
+                                    $('#cc-mother-error').show();
+                                    isValid = false;
+                                } else {
+                                    $('#cc-mother-error').hide();
+                                }
+                            
+                                // Validate Mobile Number
+                                const motmobnum = $('#MothMobNum').val();
+                                if (!/^[0-9]{10}$/.test(mobNum)) {
+                                    $('#motmobnum-error').show();
+                                    isValid = false;
+                                } else {
+                                    $('#motmobnum-error').hide();
+                                }
+                            
+                                // Validate School Name
+                                if ($('#schoolName').val().trim() === "") {
+                                    $('#schoolNameError').show();
+                                    isValid = false;
+                                } else {
+                                    $('#schoolNameError').hide();
+                                }
+                            
+                                // Validate Standard
+                                if ($('#standard').val().trim() === "") {
+                                    $('#standardError').show();
+                                    isValid = false;
+                                } else {
+                                    $('#standardError').hide();
+                                }
+                            
+                                // Validate Year of Start
+                                if ($('#startYear').val().trim() === "") {
+                                    $('#startYearError').show();
+                                    isValid = false;
+                                } else {
+                                    $('#startYearError').hide();
+                                }
+                            
+                                // Validate Year of Passing
+                                if ($('#endYear').val().trim() === "") {
+                                    $('#endYearError').show();
+                                    isValid = false;
+                                } else {
+                                    $('#endYearError').hide();
+                                }
+                            
+                                // Validate Board / University
+                                if ($('#board').val() === null || $('#board').val() === "") {
+                                    $('#boardError').show();
+                                    isValid = false;
+                                } else {
+                                    $('#boardError').hide();
+                                }
+
+                                // Validate Year of Passing
+                                if ($('#yearofPassing').val().trim() === "") {
+                                    $('#yearofPassingError').show();
+                                    isValid = false;
+                                } else {
+                                    $('#yearofPassingError').hide();
+                                }
+
+                                // Validate Email ID
+                                if ($('#email').val().trim() === "") {
+                                    $('#emailError').show();
+                                    isValid = false;
+                                } else {
+                                    $('#emailError').hide();
+                                }
+
+                                if ($('#dateofBirth').val().trim() === "") {
+                                    $('#dateofBirthError').show();
+                                    isValid = false;
+                                } else {
+                                    $('#dateofBirthError').hide();
+                                }
+                            
+                                // Validate Start Year and Passing Year
+                                const startYear = parseInt($('#startYear').val());
+                                const endYear = parseInt($('#endYear').val());
+                                if (isNaN(startYear) || isNaN(endYear) || endYear < startYear) {
+                                    $('#yearError').show().text('Valid start and passing year are required.');
+                                    isValid = false;
+                                } else {
+                                    $('#yearError').hide();
+                                }
+                            
+                                return isValid;
+                            }
+                            
+                            
+                                // Calculate Total Years
+                                $('#startYear, #endYear').on('input', function () {
+                                    const startYear = parseInt($('#startYear').val());
+                                    const endYear = parseInt($('#endYear').val());
+                                    if (!isNaN(startYear) && !isNaN(endYear) && endYear >= startYear) {
+                                        $('#totalYears').val(endYear - startYear);
+                                    } else {
+                                        $('#totalYears').val('');
+                                    }
+                                });
+
+                                document.getElementById("endYear").addEventListener("input", function () {
+                                const passingYearInput = document.getElementById("endYear");
+                                const yearOfPassingInput = document.getElementById("yearofPassing");
+
+                                const year = passingYearInput.value;
+                                if (year.length === 4 && !isNaN(year)) {
+                                    yearOfPassingInput.value = year; // Update field with passingYear value
+                                }
+                            });
+
+                            $("#addData").on("click", function () {
+            if (!validateForm()) {
+                return;
             }
-        }
-            ],
-            
+
+            const data = {
+                student_prefix: $('#studentPrefix').val(),
+                student_name: $('#StuName').val(),
+                father_prefix: $('#fatherPrefix').val(),
+                father_name: $('#FatName').val(),
+                mother_prefix: $('#motherPrefix').val(),
+                mother_name: $('#MothName').val(),
+                student_mobile: `${$('#cc-student').val()} ${$('#MobNum').val()}`,
+                father_mobile: `${$('#cc-father').val()} ${$('#FatMobNum').val()}`,
+                mother_mobile: `${$('#cc-mother').val()} ${$('#MothMobNum').val()}`,
+                school_name: $('#schoolName').val(),
+                standard: $('#standard').val(),
+                start_year: parseInt($('#startYear').val()) || null,
+                end_year: parseInt($('#endYear').val()) || null,
+                year_of_passing: parseInt($('#yearofPassing').val()) || null,
+                board: $('#board').val(),
+                total_years: (parseInt($('#endYear').val()) || 0) - (parseInt($('#startYear').val()) || 0),
+                email: $('#email').val(),
+                date_of_birth: $('#dateofBirth').val()
+            };
+
+            fetch('/add_data', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            })
+                .then(response => response.json())
+                .then(record => {
+                    const table = $('#educationTable').DataTable();
+                    const rowCount = table.rows().count() + 1;
+
+                    // Add new row to DataTable
+                    table.row.add([
+                        rowCount,
+                        record.student_name,
+                        record.father_name,
+                        record.mother_name,
+                        record.student_mobile,
+                        record.father_mobile,
+                        record.mother_mobile,
+                        record.school_name,
+                        record.standard,
+                        record.start_year,
+                        record.end_year,
+                        record.year_of_passing,
+                        record.board,
+                        record.total_years,
+                        record.email,
+                        record.date_of_birth,
+                        `<button class="btn-btn primary editBtn">Edit</button>`
+                    ]).draw(false);
+                })
+                .catch(error => {
+                    console.error('Error adding data:', error);
+                });
         });
-    }
 
-    // Validate Form
-    $(document).ready(function () {
-    // Event listeners to hide error messages when the user starts typing
-    $('#studentPrefix').on('input', function () {
-        $('#studentPrefixError').hide();
+        // Fetch existing data from MongoDB and display in table
+        fetch('/fetch_data')
+            .then(response => response.json())
+            .then(records => {
+                const table = $('#educationTable').DataTable();
+                records.forEach((record, index) => {
+                    table.row.add([
+                        index + 1,
+                        record.student_name,
+                        record.father_name,
+                        record.mother_name,
+                        record.student_mobile,
+                        record.father_mobile,
+                        record.mother_mobile,
+                        record.school_name,
+                        record.standard,
+                        record.start_year,
+                        record.end_year,
+                        record.year_of_passing,
+                        record.board,
+                        record.total_years,
+                        record.email,
+                        record.date_of_birth,
+                        `<button class="editBtn">Edit</button>`
+                    ]);
+                });
+                table.draw(false);
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+            });
+
+        // Validate Mobile Number
+        $('#MobNum').on('input', function () {
+            const mobNum = $(this).val();
+
+            // Remove any non-numeric characters
+            const updatedMobNum = mobNum.replace(/[^0-9]/g, '');
+            $(this).val(updatedMobNum);
+
+            // Check if the value is numeric
+            const isValid = /^[0-9]*$/.test(updatedMobNum);
+
+            if (!isValid) {
+                $('#mobnum-error').show();
+            } else {
+                $('#mobnum-error').hide();
+            }
+        });
     });
-    
-    $('#StuName').on('input', function () {
-        $('#studentNameError').hide();
-    });
-
-    $('#fatherPrefix').on('input', function () {
-        $('#fatherPrefixError').hide();
-    });
-
-    $('#FatName').on('input', function () {
-        $('#fatherNameError').hide();
-    });
-
-    $('#motherPrefix').on('input', function () {
-        $('#motherPrefixError').hide();
-    });
-
-    $('#MothName').on('input', function () {
-        $('#motherNameError').hide();
-    });
-
-    $('#cc-student').on('change', function () {
-        $('#cc-student-error').hide();
-    });
-
-    $('#MobNum').on('input', function () {
-        $('#mobnum-error').hide();
-    });
-
-    $('#cc-father').on('change', function () {
-        $('#cc-father-error').hide();
-    });
-
-    $('#FatMobNum').on('input', function () {
-        $('#fatmobnum-error').hide();
-    });
-
-    $('#cc-mother').on('change', function () {
-        $('#cc-mother-error').hide();
-    });
-
-    $('#MothMobNum').on('input', function () {
-        $('#motmobnum-error').hide();
-    });
-
-    $('#schoolName').on('input', function () {
-        $('#schoolNameError').hide();
-    });
-
-    $('#standard').on('input', function () {
-        $('#standardError').hide();
-    });
-
-    $('#startYear').on('input', function () {
-        $('#startYearError').hide();
-    });
-
-    $('#passingYear').on('input', function () {
-        $('#passingYearError').hide();
-    });
-
-    $('#board').on('change', function () {
-        $('#boardError').hide();
-    });
-});
-
-// Form Validation
-function validateForm() {
-    let isValid = true;
-
-    // Validate Student Prefix
-    if ($('#studentPrefix').val() === null) {
-        $('#studentPrefixError').show();
-        isValid = false;
-    } else {
-        $('#studentPrefixError').hide();
-    }
-
-    // Validate Student Name
-    if ($('#StuName').val().trim() === "") {
-        $('#studentNameError').show();
-        isValid = false;
-    } else {
-        $('#studentNameError').hide();
-    }
-
-    if ($('#fatherPrefix').val() === null) {
-        $('#fatherPrefixError').show();
-        isValid = false;
-    } else {
-        $('#fatherPrefixError').hide();
-    }
-
-    // Validate Father's Name
-    if ($('#FatName').val().trim() === "") {
-        $('#fatherNameError').show();
-        isValid = false;
-    } else {
-        $('#fatherNameError').hide();
-    }
-
-    if ($('#motherPrefix').val() === null) {
-        $('#motherPrefixError').show();
-        isValid = false;
-    } else {
-        $('#motherPrefixError').hide();
-    }
-
-    // Validate Mother's Name
-    if ($('#MothName').val().trim() === "") {
-        $('#motherNameError').show();
-        isValid = false;
-    } else {
-        $('#motherNameError').hide();
-    }
-
-    // Validate Dial Code
-    if ($('#cc-student').val() === null || $('#cc-fatheR').val() === "") {
-        $('#cc-student-error').show();
-        isValid = false;
-    } else {
-        $('#cc-student-error').hide();
-    }
-
-    // Validate Mobile Number
-    const mobNum = $('#MobNum').val();
-    if (!/^[0-9]{10}$/.test(mobNum)) {
-        $('#mobnum-error').show();
-        isValid = false;
-    } else {
-        $('#mobnum-error').hide();
-    }
-
-    // Validate Dial Code
-    if ($('#cc-father').val() === null || $('#cc-father').val() === "") {
-        $('#cc-father-error').show();
-        isValid = false;
-    } else {
-        $('#cc-father-error').hide();
-    }
-
-    // Validate Mobile Number
-    const fatmobnum = $('#FatMobNum').val();
-    if (!/^[0-9]{10}$/.test(mobNum)) {
-        $('#fatmobnum-error').show();
-        isValid = false;
-    } else {
-        $('#fatmobnum-error').hide();
-    }
-
-    // Validate Dial Code
-    if ($('#cc-mother').val() === null || $('#cc-mother').val() === "") {
-        $('#cc-mother-error').show();
-        isValid = false;
-    } else {
-        $('#cc-mother-error').hide();
-    }
-
-    // Validate Mobile Number
-    const motmobnum = $('#MothMobNum').val();
-    if (!/^[0-9]{10}$/.test(mobNum)) {
-        $('#motmobnum-error').show();
-        isValid = false;
-    } else {
-        $('#motmobnum-error').hide();
-    }
-
-    // Validate School Name
-    if ($('#schoolName').val().trim() === "") {
-        $('#schoolNameError').show();
-        isValid = false;
-    } else {
-        $('#schoolNameError').hide();
-    }
-
-    // Validate Standard
-    if ($('#standard').val().trim() === "") {
-        $('#standardError').show();
-        isValid = false;
-    } else {
-        $('#standardError').hide();
-    }
-
-    // Validate Year of Start
-    if ($('#startYear').val().trim() === "") {
-        $('#startYearError').show();
-        isValid = false;
-    } else {
-        $('#startYearError').hide();
-    }
-
-    // Validate Year of Passing
-    if ($('#passingYear').val().trim() === "") {
-        $('#passingYearError').show();
-        isValid = false;
-    } else {
-        $('#passingYearError').hide();
-    }
-
-    // Validate Board / University
-    if ($('#board').val() === null || $('#board').val() === "") {
-        $('#boardError').show();
-        isValid = false;
-    } else {
-        $('#boardError').hide();
-    }
-
-    // Validate Start Year and Passing Year
-    const startYear = parseInt($('#startYear').val());
-    const passingYear = parseInt($('#passingYear').val());
-    if (isNaN(startYear) || isNaN(passingYear) || passingYear < startYear) {
-        $('#yearError').show().text('Valid start and passing year are required.');
-        isValid = false;
-    } else {
-        $('#yearError').hide();
-    }
-
-    return isValid;
-}
-
-
-    // Calculate Total Years
-    $('#startYear, #passingYear').on('input', function () {
-        const startYear = parseInt($('#startYear').val());
-        const passingYear = parseInt($('#passingYear').val());
-        if (!isNaN(startYear) && !isNaN(passingYear) && passingYear >= startYear) {
-            $('#totalYears').val(passingYear - startYear);
-        } else {
-            $('#totalYears').val('');
-        }
-    });
-
-    // Add data to the table on button click
-    document.getElementById("addData").addEventListener("click", function () {
-        // Validate form before adding data
-        if (!validateForm()) {
-            return;
-        }
-
-        const prefixStudent = $('#studentPrefix').val();
-    const nameStudent = $('#StuName').val();
-    const prefixFather = $('#fatherPrefix').val();
-    const nameFather = $('#FatName').val();
-    const prefixMother = $('#motherPrefix').val();
-    const nameMother = $('#MothName').val();
-    const dialCodeStudent = $('#cc-student').val();
-    const mobileNumberStudent = $('#MobNum').val();
-    const dialCodeFather = $('#cc-father').val();
-    const mobileNumberFather = $('#FatMobNum').val();
-    const dialCodeMother = $('#cc-mother').val();
-    const mobileNumberMother = $('#MothMobNum').val();
-    const schoolName = $('#schoolName').val();
-    const standard = $('#standard').val();
-    const startYear = $('#startYear').val();
-    const passingYear = $('#passingYear').val();
-    const board = $('#board').val().toUpperCase();
-    const totalYears = passingYear - startYear;
-
-        const table = $('#educationTable').DataTable();
-        const rowCount = table.rows().count() + 1;
-
-        // Add new row to the DataTable
-        table.row.add([
-            rowCount,
-            `${prefixStudent} ${nameStudent.toUpperCase()}`,
-            `${prefixFather} ${nameFather.toUpperCase()}`,
-            `${prefixMother} ${nameMother.toUpperCase()}`,
-            `${dialCodeStudent} ${mobileNumberStudent}`,
-            `${dialCodeFather} ${mobileNumberFather}`,
-            `${dialCodeMother} ${mobileNumberMother}`,
-            schoolName,
-            standard,
-            startYear,
-            passingYear,
-            board,
-            totalYears,
-            `<button class="editBtn">Edit</button>`
-        ]).draw(false);
-    });
-
-    // Handle row edit functionality
-    $('#educationTable tbody').on('click', '.editBtn', function () {
-        const table = $('#educationTable').DataTable();
-        const row = table.row($(this).parents('tr')).data();
-
-        $('#studentPrefix').val(row[1].split(' ')[0]);
-    $('#StuName').val(row[1].split(' ').slice(1).join(' '));
-    $('#fatherPrefix').val(row[2].split(' ')[0]);
-    $('#FatName').val(row[2].split(' ').slice(1).join(' '));
-    $('#motherPrefix').val(row[3].split(' ')[0]);
-    $('#MothName').val(row[3].split(' ').slice(1).join(' '));
-    $('#cc-student').val(row[4].split(' ')[0]);
-    $('#MobNum').val(row[4].split(' ').slice(1).join(' '));
-    $('#cc-father').val(row[5].split(' ')[0]);
-    $('#FatMobNum').val(row[5].split(' ').slice(1).join(' '));
-    $('#cc-mother').val(row[6].split(' ')[0]);
-    $('#MothMobNum').val(row[6].split(' ').slice(1).join(' '));
-    $('#schoolName').val(row[7]);
-    $('#standard').val(row[8]);
-    $('#startYear').val(row[9]);
-    $('#passingYear').val(row[10]);
-    $('#board').val(row[11]);
-    $('#totalYears').val(row[12]);
-
-        $(this).parent().html(`<button class="saveBtn">Save</button>`);
-    });
-
-    // Handle saving the edited data
-    $('#educationTable tbody').on('click', '.saveBtn', function () {
-        const table = $('#educationTable').DataTable();
-        const row = table.row($(this).parents('tr'));
-
-        const updatedRow = [
-        row.index() + 1,
-        `${$('#studentPrefix').val()} ${$('#StuName').val().toUpperCase()}`,
-        `${$('#fatherPrefix').val()} ${$('#FatName').val().toUpperCase()}`,
-        `${$('#motherPrefix').val()} ${$('#MothName').val().toUpperCase()}`,
-        `${$('#cc-student').val()} ${$('#MobNum').val()}`,
-        `${$('#cc-father').val()} ${$('#FatMobNum').val()}`,
-        `${$('#cc-mother').val()} ${$('#MothMobNum').val()}`,
-        $('#schoolName').val(),
-        $('#standard').val(),
-        $('#startYear').val(),
-        $('#passingYear').val(),
-        $('#board').val().toUpperCase(),
-        $('#totalYears').val(),
-        `<button class="editBtn">Edit</button>`
-    ];
-
-    row.data(updatedRow).draw(false);
-    });
-});
-
-</script>
-<script>
-    $(document).ready(function () {
-    // Validate Mobile Number (Accept only numbers)
-    $('#MobNum').on('input', function () {
-        const mobNum = $(this).val();
-
-        // Remove any non-numeric characters
-        const updatedMobNum = mobNum.replace(/[^0-9]/g, '');
-        $(this).val(updatedMobNum);
-
-        // Check if the value is numeric
-        const isValid = /^[0-9]*$/.test(updatedMobNum);
-
-        if (!isValid) {
-            $('#mobnum-error').show();
-        } else {
-            $('#mobnum-error').hide();
-        }
-    });
-});
-
-</script>
-</div>
-<script>
-	 document.getElementById("cc-student").addEventListener("change", function () {
-    const selected = this.value;
-    
-    // Default to no flag
-    let flag = '';
-    let maxLength = 10; // Default max length
-
-    // Define the flags and corresponding max lengths based on country codes
-    switch (selected) {
-        case '+91':
-            flag = 'in';
-            maxLength = 10; // India
-            break;
-        case '+1':
-            flag = 'us';
-            maxLength = 10; // USA
-            break;
-        case '+44':
-            flag = 'gb';
-            maxLength = 10; // UK (varies, but typical mobile length)
-            break;
-        case '+81':
-            flag = 'jp';
-            maxLength = 11; // Japan
-            break;
-        case '+49':
-            flag = 'de';
-            maxLength = 11; // Germany
-            break;
-        case '+33':
-            flag = 'fr';
-            maxLength = 9; // France
-            break;
-        case '+61':
-            flag = 'au';
-            maxLength = 9; // Australia
-            break;
-        case '+86':
-            flag = 'cn';
-            maxLength = 11; // China
-            break;
-        case '+7':
-            flag = 'ru';
-            maxLength = 10; // Russia
-            break;
-        case '+55':
-            flag = 'br';
-            maxLength = 11; // Brazil
-            break;
-        case '+39':
-            flag = 'it';
-            maxLength = 10; // Italy
-            break;
-        case '+34':
-            flag = 'es';
-            maxLength = 9; // Spain
-            break;
-        case '+62':
-            flag = 'id';
-            maxLength = 12; // Indonesia
-            break;
-        case '+63':
-            flag = 'ph';
-            maxLength = 10; // Philippines
-            break;
-        case '+31':
-            flag = 'nl';
-            maxLength = 9; // Netherlands
-            break;
-        case '+27':
-            flag = 'za';
-            maxLength = 9; // South Africa
-            break;
-        case '+90':
-            flag = 'tr';
-            maxLength = 10; // Turkey
-            break;
-        case '+66':
-            flag = 'th';
-            maxLength = 9; // Thailand
-            break;
-        case '+966':
-            flag = 'sa';
-            maxLength = 9; // Saudi Arabia
-            break;
-        case '+971':
-            flag = 'ae';
-            maxLength = 9; // UAE
-            break;
-        case '+880':
-            flag = 'bd';
-            maxLength = 11; // Bangladesh
-            break;
-        case '+94':
-            flag = 'lk';
-            maxLength = 10; // Sri Lanka
-            break;
-        case '+974':
-            flag = 'qa';
-            maxLength = 8; // Qatar
-            break;
-        case '+968':
-            flag = 'om';
-            maxLength = 8; // Oman
-            break;
-        case '+960':
-            flag = 'mv';
-            maxLength = 7; // Maldives
-            break;
-        case '+965':
-            flag = 'kw';
-            maxLength = 8; // Kuwait
-            break;
-        default:
-            maxLength = 10; // Default length
-    }
-
-    // Set the flag background
-    this.setAttribute("data-selected", flag);
-
-    // Set the max length of the mobile number field based on the country code
-    const mobileInput = document.getElementById("MobNum");
-    mobileInput.setAttribute("maxlength", maxLength);
-});
-
-document.getElementById("cc-father").addEventListener("change", function () {
-    const selected = this.value;
-    
-    // Default to no flag
-    let flag = '';
-    let maxLength = 10; // Default max length
-
-    // Define the flags and corresponding max lengths based on country codes
-    switch (selected) {
-        case '+91':
-            flag = 'in';
-            maxLength = 10; // India
-            break;
-        case '+1':
-            flag = 'us';
-            maxLength = 10; // USA
-            break;
-        case '+44':
-            flag = 'gb';
-            maxLength = 10; // UK (varies, but typical mobile length)
-            break;
-        case '+81':
-            flag = 'jp';
-            maxLength = 11; // Japan
-            break;
-        case '+49':
-            flag = 'de';
-            maxLength = 11; // Germany
-            break;
-        case '+33':
-            flag = 'fr';
-            maxLength = 9; // France
-            break;
-        case '+61':
-            flag = 'au';
-            maxLength = 9; // Australia
-            break;
-        case '+86':
-            flag = 'cn';
-            maxLength = 11; // China
-            break;
-        case '+7':
-            flag = 'ru';
-            maxLength = 10; // Russia
-            break;
-        case '+55':
-            flag = 'br';
-            maxLength = 11; // Brazil
-            break;
-        case '+39':
-            flag = 'it';
-            maxLength = 10; // Italy
-            break;
-        case '+34':
-            flag = 'es';
-            maxLength = 9; // Spain
-            break;
-        case '+62':
-            flag = 'id';
-            maxLength = 12; // Indonesia
-            break;
-        case '+63':
-            flag = 'ph';
-            maxLength = 10; // Philippines
-            break;
-        case '+31':
-            flag = 'nl';
-            maxLength = 9; // Netherlands
-            break;
-        case '+27':
-            flag = 'za';
-            maxLength = 9; // South Africa
-            break;
-        case '+90':
-            flag = 'tr';
-            maxLength = 10; // Turkey
-            break;
-        case '+66':
-            flag = 'th';
-            maxLength = 9; // Thailand
-            break;
-        case '+966':
-            flag = 'sa';
-            maxLength = 9; // Saudi Arabia
-            break;
-        case '+971':
-            flag = 'ae';
-            maxLength = 9; // UAE
-            break;
-        case '+880':
-            flag = 'bd';
-            maxLength = 11; // Bangladesh
-            break;
-        case '+94':
-            flag = 'lk';
-            maxLength = 10; // Sri Lanka
-            break;
-        case '+974':
-            flag = 'qa';
-            maxLength = 8; // Qatar
-            break;
-        case '+968':
-            flag = 'om';
-            maxLength = 8; // Oman
-            break;
-        case '+960':
-            flag = 'mv';
-            maxLength = 7; // Maldives
-            break;
-        case '+965':
-            flag = 'kw';
-            maxLength = 8; // Kuwait
-            break;
-        default:
-            maxLength = 10; // Default length
-    }
-
-    // Set the flag background
-    this.setAttribute("data-selected", flag);
-
-    // Set the max length of the mobile number field based on the country code
-    const mobileInput = document.getElementById("MobNum");
-    mobileInput.setAttribute("maxlength", maxLength);
-});
-
-document.getElementById("cc-mother").addEventListener("change", function () {
-    const selected = this.value;
-    
-    // Default to no flag
-    let flag = '';
-    let maxLength = 10; // Default max length
-
-    // Define the flags and corresponding max lengths based on country codes
-    switch (selected) {
-        case '+91':
-            flag = 'in';
-            maxLength = 10; // India
-            break;
-        case '+1':
-            flag = 'us';
-            maxLength = 10; // USA
-            break;
-        case '+44':
-            flag = 'gb';
-            maxLength = 10; // UK (varies, but typical mobile length)
-            break;
-        case '+81':
-            flag = 'jp';
-            maxLength = 11; // Japan
-            break;
-        case '+49':
-            flag = 'de';
-            maxLength = 11; // Germany
-            break;
-        case '+33':
-            flag = 'fr';
-            maxLength = 9; // France
-            break;
-        case '+61':
-            flag = 'au';
-            maxLength = 9; // Australia
-            break;
-        case '+86':
-            flag = 'cn';
-            maxLength = 11; // China
-            break;
-        case '+7':
-            flag = 'ru';
-            maxLength = 10; // Russia
-            break;
-        case '+55':
-            flag = 'br';
-            maxLength = 11; // Brazil
-            break;
-        case '+39':
-            flag = 'it';
-            maxLength = 10; // Italy
-            break;
-        case '+34':
-            flag = 'es';
-            maxLength = 9; // Spain
-            break;
-        case '+62':
-            flag = 'id';
-            maxLength = 12; // Indonesia
-            break;
-        case '+63':
-            flag = 'ph';
-            maxLength = 10; // Philippines
-            break;
-        case '+31':
-            flag = 'nl';
-            maxLength = 9; // Netherlands
-            break;
-        case '+27':
-            flag = 'za';
-            maxLength = 9; // South Africa
-            break;
-        case '+90':
-            flag = 'tr';
-            maxLength = 10; // Turkey
-            break;
-        case '+66':
-            flag = 'th';
-            maxLength = 9; // Thailand
-            break;
-        case '+966':
-            flag = 'sa';
-            maxLength = 9; // Saudi Arabia
-            break;
-        case '+971':
-            flag = 'ae';
-            maxLength = 9; // UAE
-            break;
-        case '+880':
-            flag = 'bd';
-            maxLength = 11; // Bangladesh
-            break;
-        case '+94':
-            flag = 'lk';
-            maxLength = 10; // Sri Lanka
-            break;
-        case '+974':
-            flag = 'qa';
-            maxLength = 8; // Qatar
-            break;
-        case '+968':
-            flag = 'om';
-            maxLength = 8; // Oman
-            break;
-        case '+960':
-            flag = 'mv';
-            maxLength = 7; // Maldives
-            break;
-        case '+965':
-            flag = 'kw';
-            maxLength = 8; // Kuwait
-            break;
-        default:
-            maxLength = 10; // Default length
-    }
-
-    // Set the flag background
-    this.setAttribute("data-selected", flag);
-
-    // Set the max length of the mobile number field based on the country code
-    const mobileInput = document.getElementById("MobNum");
-    mobileInput.setAttribute("maxlength", maxLength);
-});
-</script>
-
-<div class="row">
-	<div class="col-md-12">
-		
-			<div class="row">
-				<div class="col-md-12" style="text-align:center;color: white;background-color: #3e3636;padding:10px">© 2024 Designed & Developed by <b>B S Shreesha</b>, Bengaluru. Karnataka. India.
-				</div>
-			</div>
-		
-	</div>	
-</div>
-</div>
-</div>
-</body>
-</html>	
-
+                            </script>
+                            </div>
+                            <script>
+                                 document.getElementById("cc-student").addEventListener("change", function () {
+                                const selected = this.value;
+                                
+                                // Default to no flag
+                                let flag = '';
+                                let maxLength = 10; // Default max length
+                            
+                                // Define the flags and corresponding max lengths based on country codes
+                                switch (selected) {
+                                    case '+91':
+                                        flag = 'in';
+                                        maxLength = 10; // India
+                                        break;
+                                    case '+1':
+                                        flag = 'us';
+                                        maxLength = 10; // USA
+                                        break;
+                                    case '+44':
+                                        flag = 'gb';
+                                        maxLength = 10; // UK (varies, but typical mobile length)
+                                        break;
+                                    case '+81':
+                                        flag = 'jp';
+                                        maxLength = 11; // Japan
+                                        break;
+                                    case '+49':
+                                        flag = 'de';
+                                        maxLength = 11; // Germany
+                                        break;
+                                    case '+33':
+                                        flag = 'fr';
+                                        maxLength = 9; // France
+                                        break;
+                                    case '+61':
+                                        flag = 'au';
+                                        maxLength = 9; // Australia
+                                        break;
+                                    case '+86':
+                                        flag = 'cn';
+                                        maxLength = 11; // China
+                                        break;
+                                    case '+7':
+                                        flag = 'ru';
+                                        maxLength = 10; // Russia
+                                        break;
+                                    case '+55':
+                                        flag = 'br';
+                                        maxLength = 11; // Brazil
+                                        break;
+                                    case '+39':
+                                        flag = 'it';
+                                        maxLength = 10; // Italy
+                                        break;
+                                    case '+34':
+                                        flag = 'es';
+                                        maxLength = 9; // Spain
+                                        break;
+                                    case '+62':
+                                        flag = 'id';
+                                        maxLength = 12; // Indonesia
+                                        break;
+                                    case '+63':
+                                        flag = 'ph';
+                                        maxLength = 10; // Philippines
+                                        break;
+                                    case '+31':
+                                        flag = 'nl';
+                                        maxLength = 9; // Netherlands
+                                        break;
+                                    case '+27':
+                                        flag = 'za';
+                                        maxLength = 9; // South Africa
+                                        break;
+                                    case '+90':
+                                        flag = 'tr';
+                                        maxLength = 10; // Turkey
+                                        break;
+                                    case '+66':
+                                        flag = 'th';
+                                        maxLength = 9; // Thailand
+                                        break;
+                                    case '+966':
+                                        flag = 'sa';
+                                        maxLength = 9; // Saudi Arabia
+                                        break;
+                                    case '+971':
+                                        flag = 'ae';
+                                        maxLength = 9; // UAE
+                                        break;
+                                    case '+880':
+                                        flag = 'bd';
+                                        maxLength = 11; // Bangladesh
+                                        break;
+                                    case '+94':
+                                        flag = 'lk';
+                                        maxLength = 10; // Sri Lanka
+                                        break;
+                                    case '+974':
+                                        flag = 'qa';
+                                        maxLength = 8; // Qatar
+                                        break;
+                                    case '+968':
+                                        flag = 'om';
+                                        maxLength = 8; // Oman
+                                        break;
+                                    case '+960':
+                                        flag = 'mv';
+                                        maxLength = 7; // Maldives
+                                        break;
+                                    case '+965':
+                                        flag = 'kw';
+                                        maxLength = 8; // Kuwait
+                                        break;
+                                    default:
+                                        maxLength = 10; // Default length
+                                }
+                            
+                                // Set the flag background
+                                this.setAttribute("data-selected", flag);
+                            
+                                // Set the max length of the mobile number field based on the country code
+                                const mobileInput = document.getElementById("MobNum");
+                                mobileInput.setAttribute("maxlength", maxLength);
+                            });
+                            
+                            document.getElementById("cc-father").addEventListener("change", function () {
+                                const selected = this.value;
+                                
+                                // Default to no flag
+                                let flag = '';
+                                let maxLength = 10; // Default max length
+                            
+                                // Define the flags and corresponding max lengths based on country codes
+                                switch (selected) {
+                                    case '+91':
+                                        flag = 'in';
+                                        maxLength = 10; // India
+                                        break;
+                                    case '+1':
+                                        flag = 'us';
+                                        maxLength = 10; // USA
+                                        break;
+                                    case '+44':
+                                        flag = 'gb';
+                                        maxLength = 10; // UK (varies, but typical mobile length)
+                                        break;
+                                    case '+81':
+                                        flag = 'jp';
+                                        maxLength = 11; // Japan
+                                        break;
+                                    case '+49':
+                                        flag = 'de';
+                                        maxLength = 11; // Germany
+                                        break;
+                                    case '+33':
+                                        flag = 'fr';
+                                        maxLength = 9; // France
+                                        break;
+                                    case '+61':
+                                        flag = 'au';
+                                        maxLength = 9; // Australia
+                                        break;
+                                    case '+86':
+                                        flag = 'cn';
+                                        maxLength = 11; // China
+                                        break;
+                                    case '+7':
+                                        flag = 'ru';
+                                        maxLength = 10; // Russia
+                                        break;
+                                    case '+55':
+                                        flag = 'br';
+                                        maxLength = 11; // Brazil
+                                        break;
+                                    case '+39':
+                                        flag = 'it';
+                                        maxLength = 10; // Italy
+                                        break;
+                                    case '+34':
+                                        flag = 'es';
+                                        maxLength = 9; // Spain
+                                        break;
+                                    case '+62':
+                                        flag = 'id';
+                                        maxLength = 12; // Indonesia
+                                        break;
+                                    case '+63':
+                                        flag = 'ph';
+                                        maxLength = 10; // Philippines
+                                        break;
+                                    case '+31':
+                                        flag = 'nl';
+                                        maxLength = 9; // Netherlands
+                                        break;
+                                    case '+27':
+                                        flag = 'za';
+                                        maxLength = 9; // South Africa
+                                        break;
+                                    case '+90':
+                                        flag = 'tr';
+                                        maxLength = 10; // Turkey
+                                        break;
+                                    case '+66':
+                                        flag = 'th';
+                                        maxLength = 9; // Thailand
+                                        break;
+                                    case '+966':
+                                        flag = 'sa';
+                                        maxLength = 9; // Saudi Arabia
+                                        break;
+                                    case '+971':
+                                        flag = 'ae';
+                                        maxLength = 9; // UAE
+                                        break;
+                                    case '+880':
+                                        flag = 'bd';
+                                        maxLength = 11; // Bangladesh
+                                        break;
+                                    case '+94':
+                                        flag = 'lk';
+                                        maxLength = 10; // Sri Lanka
+                                        break;
+                                    case '+974':
+                                        flag = 'qa';
+                                        maxLength = 8; // Qatar
+                                        break;
+                                    case '+968':
+                                        flag = 'om';
+                                        maxLength = 8; // Oman
+                                        break;
+                                    case '+960':
+                                        flag = 'mv';
+                                        maxLength = 7; // Maldives
+                                        break;
+                                    case '+965':
+                                        flag = 'kw';
+                                        maxLength = 8; // Kuwait
+                                        break;
+                                    default:
+                                        maxLength = 10; // Default length
+                                }
+                            
+                                // Set the flag background
+                                this.setAttribute("data-selected", flag);
+                            
+                                // Set the max length of the mobile number field based on the country code
+                                const mobileInput = document.getElementById("MobNum");
+                                mobileInput.setAttribute("maxlength", maxLength);
+                            });
+                            
+                            document.getElementById("cc-mother").addEventListener("change", function () {
+                                const selected = this.value;
+                                
+                                // Default to no flag
+                                let flag = '';
+                                let maxLength = 10; // Default max length
+                            
+                                // Define the flags and corresponding max lengths based on country codes
+                                switch (selected) {
+                                    case '+91':
+                                        flag = 'in';
+                                        maxLength = 10; // India
+                                        break;
+                                    case '+1':
+                                        flag = 'us';
+                                        maxLength = 10; // USA
+                                        break;
+                                    case '+44':
+                                        flag = 'gb';
+                                        maxLength = 10; // UK (varies, but typical mobile length)
+                                        break;
+                                    case '+81':
+                                        flag = 'jp';
+                                        maxLength = 11; // Japan
+                                        break;
+                                    case '+49':
+                                        flag = 'de';
+                                        maxLength = 11; // Germany
+                                        break;
+                                    case '+33':
+                                        flag = 'fr';
+                                        maxLength = 9; // France
+                                        break;
+                                    case '+61':
+                                        flag = 'au';
+                                        maxLength = 9; // Australia
+                                        break;
+                                    case '+86':
+                                        flag = 'cn';
+                                        maxLength = 11; // China
+                                        break;
+                                    case '+7':
+                                        flag = 'ru';
+                                        maxLength = 10; // Russia
+                                        break;
+                                    case '+55':
+                                        flag = 'br';
+                                        maxLength = 11; // Brazil
+                                        break;
+                                    case '+39':
+                                        flag = 'it';
+                                        maxLength = 10; // Italy
+                                        break;
+                                    case '+34':
+                                        flag = 'es';
+                                        maxLength = 9; // Spain
+                                        break;
+                                    case '+62':
+                                        flag = 'id';
+                                        maxLength = 12; // Indonesia
+                                        break;
+                                    case '+63':
+                                        flag = 'ph';
+                                        maxLength = 10; // Philippines
+                                        break;
+                                    case '+31':
+                                        flag = 'nl';
+                                        maxLength = 9; // Netherlands
+                                        break;
+                                    case '+27':
+                                        flag = 'za';
+                                        maxLength = 9; // South Africa
+                                        break;
+                                    case '+90':
+                                        flag = 'tr';
+                                        maxLength = 10; // Turkey
+                                        break;
+                                    case '+66':
+                                        flag = 'th';
+                                        maxLength = 9; // Thailand
+                                        break;
+                                    case '+966':
+                                        flag = 'sa';
+                                        maxLength = 9; // Saudi Arabia
+                                        break;
+                                    case '+971':
+                                        flag = 'ae';
+                                        maxLength = 9; // UAE
+                                        break;
+                                    case '+880':
+                                        flag = 'bd';
+                                        maxLength = 11; // Bangladesh
+                                        break;
+                                    case '+94':
+                                        flag = 'lk';
+                                        maxLength = 10; // Sri Lanka
+                                        break;
+                                    case '+974':
+                                        flag = 'qa';
+                                        maxLength = 8; // Qatar
+                                        break;
+                                    case '+968':
+                                        flag = 'om';
+                                        maxLength = 8; // Oman
+                                        break;
+                                    case '+960':
+                                        flag = 'mv';
+                                        maxLength = 7; // Maldives
+                                        break;
+                                    case '+965':
+                                        flag = 'kw';
+                                        maxLength = 8; // Kuwait
+                                        break;
+                                    default:
+                                        maxLength = 10; // Default length
+                                }
+                            
+                                // Set the flag background
+                                this.setAttribute("data-selected", flag);
+                            
+                                // Set the max length of the mobile number field based on the country code
+                                const mobileInput = document.getElementById("MobNum");
+                                mobileInput.setAttribute("maxlength", maxLength);
+                            });
+                            </script>
+                            
+                    <div class="row phide">
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-12" style="text-align:center;color: white;background-color: #3e3636;padding:10px">Copyright © 2025 All Rights Reserved.
+							</div>
+                            </div>
+                        </div>
+                    </div>
+    </body>
 </html>
